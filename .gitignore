@@ -1,0 +1,32 @@
+# Binários e arquivos de build
+bin/
+obj/
+
+# Arquivos específicos do usuário
+*.user
+*.suo
+
+# Diretórios do Visual Studio
+.vs/
+
+# Diretórios do Rider
+.idea/
+
+# Arquivos gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+
+# Pacotes NuGet
+*.nupkg
+packages/
+
+# Logs
+*.log
+
+# Arquivos de configuração temporários
+appsettings.Development.json
+launchSettings.json
+
+# Outros arquivos temporários
+*.tmp
+*.temp
