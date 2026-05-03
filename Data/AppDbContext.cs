@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-using ProjetoDBZ.Models;
+using ProjetoDBZ.models;
 
 namespace ProjetoDBZ.Data
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions options) : base(options) {}
+        public AppDbContext(DbContextOptions options) : base(options){}
 
-        public DbSet<Personagem> DBZ{get; set;}
+        public DbSet<Personagem> DBZ {get; set;}
     }
 }

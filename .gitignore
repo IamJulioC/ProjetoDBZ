@@ -1,32 +1,90 @@
-# Binários e arquivos de build
+## .NET / C#
+
+# Build results
 bin/
 obj/
+out/
 
-# Arquivos específicos do usuário
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio / Rider
+.vs/
+.idea/
 *.user
 *.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
 
-# Diretórios do Visual Studio
-.vs/
-
-# Diretórios do Rider
-.idea/
-
-# Arquivos gerados pelo sistema operacional
-.DS_Store
-Thumbs.db
-
-# Pacotes NuGet
-*.nupkg
-packages/
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
 
 # Logs
 *.log
+logs/
 
-# Arquivos de configuração temporários
+# Runtime
+*.pid
+*.seed
+*.pid.lock
+
+## ASP.NET / Configurações sensíveis
+
+# Nunca suba credenciais!
 appsettings.Development.json
-launchSettings.json
+appsettings.Production.json
+appsettings.Staging.json
+appsettings.Local.json
 
-# Outros arquivos temporários
-*.tmp
-*.temp
+# Secrets
+secrets.json
+*.pfx
+*.p12
+*.key
+*.pem
+
+# User secrets (dotnet user-secrets)
+**/Properties/launchSettings.json
+
+## Entity Framework
+
+# Migrations geradas localmente (opcional — remova se quiser versionar)
+# **/Migrations/
+
+## Sistema Operacional
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+## Docker (caso use futuramente)
+.dockerignore
+docker-compose.override.yml
+
+## Publicação
+
+publish/
+*.pubxml
+*.pubxml.user

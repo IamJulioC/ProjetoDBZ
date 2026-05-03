@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoDBZ.Data;
+using ProjetoDBZ.models;
 
 namespace ProjetoDBZ.Controllers
 {
@@ -16,6 +17,15 @@ namespace ProjetoDBZ.Controllers
         public PersonagensController(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddPersonagem(Personagem personagem)
+        {
+            _appDbContext.DBZ.Add(personagem);
+            await _appDbContext.SaveChangesAsync();
+
+            return Ok(personagem);
         }
     }
 }
