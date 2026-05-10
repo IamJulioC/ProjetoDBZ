@@ -66,6 +66,24 @@ namespace ProjetoDBZ.Controllers
             return StatusCode(201, personagemExistente);
         }
 
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> PatchPersonagem(int id, [FromBody] Personagem personagemAtualizado)
+        {
+            var personagemExistente = await _appDbContext.DBZ.FindAsync(id);
+
+            if (personagemExistente == null)
+            {
+                return NotFound("Personagem não encontrado");
+            }
+
+            _appDbContext.Entry(personagemExistente).CurrentValues.SetValues(personagemAtualizado);
+
+            await _appDbContext.SaveChangesAsync();
+
+            return StatusCode(201, personagemExistente);
+        }
+
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletaPersonagem(int id)
         {
